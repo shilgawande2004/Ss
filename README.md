@@ -95,7 +95,7 @@ Use Case
 *Identify top products and trends
 *Generate automated business reports
 
-👉 *Add your project link here*
+👉 https://github.com/shilgawande2004/Ss/blob/main/CrewAI%20E-Commerce%20Data%20Pipeline.py
 
 ---
 
