@@ -65,7 +65,7 @@ Insights
 
 ---
 
-### 🔹 3. A/B Testing Analysis for Marketing Campaign (Python)
+### 🔹 3. Evaluating Marketing Campaign Effectiveness Using AB Testing
 
 Overview
 
@@ -78,7 +78,7 @@ Insights
 *Statistical test confirms whether the difference is significant
 *Data-driven recommendation for selecting the better campaign
 
-👉 *Add your project link here*
+👉 https://github.com/shilgawande2004/Ss/blob/main/Evaluating%20Marketing%20Campaign%20Effectiveness%20Using%20AB%20Testing.ipynb
 
 ---
 
