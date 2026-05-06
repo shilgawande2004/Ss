@@ -1,0 +1,38 @@
+“Madhav E-commerce Dashboard”,
+
+Overview 
+
+This project presents an interactive Power BI dashboard built to analyze sales data from Madhav E-commerce. It provides insights into business performance, customer trends, and product-level analysis to support data-driven decision-making.
+
+🔹 Business Problem 
+
+The business needs to understand sales performance, identify top-selling products, and analyze customer purchasing patterns to improve revenue and optimize decision-making.
+
+🔹 Key KPIs
+*Total Sales
+*Total Profit
+*Number of Orders
+*Average Order Value
+*Top Categories / Products
+
+🔹 Key Insights (VERY IMPORTANT)
+
+👉 Don’t leave this empty—this is what makes you stand out:
+
+Example:
+
+*Electronics category generates the highest revenue
+*Majority of sales come from repeat customers
+*Certain regions outperform others in sales
+*Sales peak during specific months (seasonal trend)
+
+🔹 Tools Used
+*Power BI
+*DAX
+*Excel / CSV
+
+
+🔹 Why This Project Matters
+
+This dashboard helps businesses quickly monitor performance, identify trends, and make informed decisions using real-time data visualization.
+Project Link= https://drive.google.com/file/d/1MvOSq9tigmQo94Go-3XMXNDepM5sdLX3/view?usp=drive_link
