@@ -1,0 +1,74 @@
+import os
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+from langchain.agents import AgentExecutor, create_openai_tools_agent
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_community.tools import DuckDuckGoSearchRun
+from langchain_community.tools.yahoo_finance_news import YahooFinanceNewsTool
+from langchain.tools import tool
+load_dotenv()
+# ── Custom Tools ─────────────────────────────────────────────
+@tool
+def calculate_pe_ratio(price: float, eps: float) -> str:
+    """Calculate Price-to-Earnings (P/E) ratio for a stock.
+    Args: price (float): stock price. eps (float): earnings per share.
+    Returns: str with P/E ratio analysis."""
+    if eps <= 0:
+        return "P/E ratio cannot be calculated (EPS ≤ 0)"
+    pe = round(price / eps, 2)
+    sentiment = "overvalued" if pe > 25 else "fairly valued" if pe > 15 else "undervalued"
+    return f"P/E Ratio: {pe} → Stock appears {sentiment}"
+@tool
+def analyze_market_sentiment(ticker: str) -> str:
+    """Analyze market sentiment score for a given stock ticker."""
+    import random
+    score = round(random.uniform(-1, 1), 2)
+    label = "Bullish" if score > 0.2 else "Bearish" if score < -0.2 else "Neutral"
+    return f"{ticker.upper()} Sentiment: {label} (score: {score})"
+# ── LLM Setup ────────────────────────────────────────────────
+llm = ChatOpenAI(
+    model="gpt-4o",
+    temperature=0.1,
+    openai_api_key=os.getenv("OPENAI_API_KEY")
+)
+# ── Tool Registry ────────────────────────────────────────────
+tools = [
+    DuckDuckGoSearchRun(),
+    YahooFinanceNewsTool(),
+    calculate_pe_ratio,
+    analyze_market_sentiment,
+]
+# ── Prompt Template ──────────────────────────────────────────
+prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are an expert Market Analyst AI Agent.
+    Your tasks: analyze stocks, interpret financial news, calculate
+    key ratios, assess market sentiment, and provide actionable
+    investment insights. Always cite sources and be factual."""),
+    ("human", "{input}"),
+    MessagesPlaceholder(variable_name="agent_scratchpad"),
+])
+# ── Agent Assembly ───────────────────────────────────────────
+agent = create_openai_tools_agent(llm, tools, prompt)
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    verbose=True,
+    max_iterations=5,
+    handle_parsing_errors=True
+)
+# ── Main Entry Point ─────────────────────────────────────────
+if __name__ == "__main__":
+    print("🤖 Market Analyst AI Agent Ready!")
+    print("Ask about stocks, market trends, or financial analysis.")
+    print("Type 'quit' to exit.\n")
+    while True:
+        query = input("\n📊 Your query: ").strip()
+        if query.lower() == "quit":
+            print("Goodbye! 📈"); break
+        if not query:
+            continue
+        try:
+            result = agent_executor.invoke({"input": query})
+            print(f"\n✅ Analysis:\n{result['output']}")
+        except Exception as e:
+            print(f"❌ Error: {e}")
