@@ -99,13 +99,28 @@ Use Case
 
 ---
 
+### 🔹 5.Market Research Agent using LangChain
+
+Overview
+This project develops an autonomous AI agent designed to automate end-to-end market intelligence gathering using the LangChain framework. The system replaces manual research by coordinating search tools and LLMs to provide structured, actionable business insights in real-time.
+
+Use Case
+Competitor Benchmarking: Automatically track rival product launches, feature updates, and pricing shifts.
+
+Trend Analysis: Scan news outlets and social signals to identify emerging consumer behaviors.
+
+Opportunity Mapping: Perform SWOT analysis on specific market niches to find untapped gaps.
+
+Automated Intelligence Reports: Synthesize complex web data into professional executive summaries and PDFs.
+
+---
 ## 📈 What I’m Working On
 
 * Improving my Data Analytics skills
 * Building more real-world projects
 * Learning advanced analytics and AI tools
-
 ---
+
 
 ## 📬 Contact Me
 
