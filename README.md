@@ -113,6 +113,8 @@ Opportunity Mapping: Perform SWOT analysis on specific market niches to find unt
 
 Automated Intelligence Reports: Synthesize complex web data into professional executive summaries and PDFs.
 
+https://github.com/shilgawande2004/Ss/blob/main/market%20research%20agent%20built%20with%20Lang%20Chain
+
 ---
 ## 📈 What I’m Working On
 
