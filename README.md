@@ -98,8 +98,11 @@ Use Case
 👉 https://github.com/shilgawande2004/Ss/blob/main/CrewAI%20E-Commerce%20Data%20Pipeline.py
 
 ---
+ ### 🔹 5.Sales and Customer Analytics Using SQL  
+ 
+Developed a relational database project using MySQL/PostgreSQL to analyze customer purchases, product sales, and revenue trends. Designed and managed multiple tables including customers, products, and orders with proper relationships using primary and foreign keys. Performed data analysis using SQL queries such as JOINs, GROUP BY, aggregate functions, HAVING clause, and subqueries to generate business insights including top customers, best-selling products, monthly sales reports, and revenue analysis. The project demonstrates practical SQL skills used in Data Analyst and MIS Executive roles.
 
-### 🔹 5.Market Research Agent using LangChain
+### 🔹 6.Market Research Agent using LangChain
 
 Overview
 This project develops an autonomous AI agent designed to automate end-to-end market intelligence gathering using the LangChain framework. The system replaces manual research by coordinating search tools and LLMs to provide structured, actionable business insights in real-time.
